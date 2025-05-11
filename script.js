@@ -4,7 +4,10 @@ window.addEventListener("load", function() {
   // Show main content
   document.getElementById("main-content").style.display = "block";
 });
-
+AOS.init({
+  duration: 1000, // Animation duration in ms
+  once: true      // Animate only once
+});
 
 var typed = new Typed('.text', {
     strings: ['Oracle APEX Developer','Full Stack Developer', 'Web Designer','Ui/Ux Designer'],
