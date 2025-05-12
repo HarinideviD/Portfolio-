@@ -120,6 +120,44 @@ body {
 .navbar a:hover::after{
     width: 100%;
 }
+.section {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  border-bottom: 1px solid #333;
+  opacity: 0;
+  transition: all 1s ease;
+}
+
+.section.visible {
+  opacity: 1;
+}
+
+.animate-left {
+  transform: translateX(-100%);
+}
+
+.animate-left.visible {
+  transform: translateX(0);
+}
+
+.animate-right {
+  transform: translateX(100%);
+}
+
+.animate-right.visible {
+  transform: translateX(0);
+}
+
+.animate-zoom {
+  transform: scale(0.5);
+}
+
+.animate-zoom.visible {
+  transform: scale(1);
+}
 .home{
     position: relative;
     width: 100%;
