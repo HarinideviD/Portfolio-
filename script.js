@@ -4,10 +4,22 @@ window.addEventListener("load", function() {
   // Show main content
   document.getElementById("main-content").style.display = "block";
 });
-AOS.init({
-  duration: 1000, // Animation duration in ms
-  once: true      // Animate only once
+const sections = document.querySelectorAll('.section');
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, {
+  threshold: 0.2
 });
+
+sections.forEach(section => {
+  observer.observe(section);
+});
+
 
 var typed = new Typed('.text', {
     strings: ['Oracle APEX Developer','Full Stack Developer', 'Web Designer','Ui/Ux Designer'],
