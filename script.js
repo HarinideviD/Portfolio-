@@ -30,26 +30,27 @@ if (typeof Typed !== "undefined") {
   });
 }
 
-// Toggle “Read more” / “Show less” on project descriptions
-document.querySelectorAll(".toggle-desc").forEach(btn => {
-  btn.addEventListener("click", () => {
-    const descriptionContainer = btn.closest('.description');
-    if (!descriptionContainer) return;
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".toggle-desc").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const descriptionContainer = btn.closest('.description');
+      if (!descriptionContainer) return;
 
-    const shortText = descriptionContainer.querySelector('.short-text');
-    const fullText = descriptionContainer.querySelector('.full-text');
+      const shortText = descriptionContainer.querySelector('.short-text');
+      const fullText = descriptionContainer.querySelector('.full-text');
 
-    if (!shortText || !fullText) return;
+      if (!shortText || !fullText) return;
 
-    if (fullText.classList.contains('hidden')) {
-      fullText.classList.remove('hidden');
-      shortText.style.display = 'none';
-      btn.textContent = 'Show less';
-    } else {
-      fullText.classList.add('hidden');
-      shortText.style.display = 'block';
-      btn.textContent = 'Read more';
-    }
+      if (fullText.classList.contains('hidden')) {
+        fullText.classList.remove('hidden');
+        shortText.style.display = 'none';
+        btn.textContent = 'Show less';
+      } else {
+        fullText.classList.add('hidden');
+        shortText.style.display = 'block';
+        btn.textContent = 'Read more';
+      }
+    });
   });
 });
 
