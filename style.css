@@ -861,7 +861,7 @@ body {
     overflow: hidden;
     border-radius: 12px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-    background-color: #fff;
+    background-color: #d7d2cb !important;
     width: 100%;
     max-width: 300px;  /* Controls the width */
     margin: 0 auto;    /* Optional: centers the card */
