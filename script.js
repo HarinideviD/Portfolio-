@@ -28,57 +28,33 @@ var typed = new Typed('.text', {
     loop:true
   });
 
-  var tablinks= document.getElementsByClassName("tab-links");
-  var tabcontents = document.getElementsByClassName("tab-contents");
-
-  function opentab(tabname){
-    for(tablink of tablinks){
-      tablink.classList.remove("active-link");
-    }
-    for(tabcontent of tabcontents){
-      tabcontent.classList.remove("active-tab");
-    }
-    event.currentTarget.classList.add("active-link");
-    document.getElementById(tabname).classList.add("active-tab");
-
-  }
-
-  document.querySelectorAll('.like-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      let count = parseInt(btn.textContent.replace(/\D/g, ''));
-      btn.textContent = `❤ ${count + 1}`;
-    });
-  });
-
-  document.getElementById("contact-form").addEventListener("submit", function () {
-    const status = document.getElementById("form-status");
-    status.textContent = "Sending...";
-  });
-<script>
-  // Toggle "Read more / Show less"
-  document.querySelectorAll('.toggle-desc').forEach(button => {
-    button.addEventListener('click', () => {
-      const desc = button.closest('.description');
-      const shortText = desc.querySelector('.short-text');
-      const fullText = desc.querySelector('.full-text');
-
-      if (fullText.classList.contains('hidden')) {
-        fullText.classList.remove('hidden');
-        shortText.style.display = 'none';
-        button.textContent = 'Show less';
+  document.querySelectorAll(".read-more").forEach((btn) => {
+    btn.addEventListener("click", function () {
+      const desc = this.previousElementSibling;
+      if (this.textContent === "Read more") {
+        desc.textContent = desc.dataset.full;
+        this.textContent = "Show less";
       } else {
-        fullText.classList.add('hidden');
-        shortText.style.display = 'block';
-        button.textContent = 'Read more';
+        desc.textContent = desc.dataset.short;
+        this.textContent = "Read more";
       }
     });
   });
 
-  // Handle project link click
-  document.querySelectorAll('.send-icon').forEach(button => {
-    button.addEventListener('click', () => {
-      const url = button.getAttribute('data-link');
-      if (url) window.open(url, '_blank');
+  // Store short and full descriptions
+  document.querySelectorAll(".project-description").forEach((desc) => {
+    const full = desc.textContent.trim();
+    const short = full.slice(0, 100) + "...";
+    desc.dataset.full = full;
+    desc.dataset.short = short;
+    desc.textContent = short;
+  });
+
+  // Redirect on send icon click
+  document.querySelectorAll(".send-icon").forEach((btn) => {
+    btn.addEventListener("click", function () {
+      const link = this.getAttribute("data-link");
+      if (link) window.open(link, "_blank");
     });
   });
 
