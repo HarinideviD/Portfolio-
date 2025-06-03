@@ -1,12 +1,14 @@
+// Hide loader and show main content on page load
 window.addEventListener("load", function() {
-  // Hide loader
-  document.getElementById("loading-screen").style.display = "none";
-  // Show main content
-  document.getElementById("main-content").style.display = "block";
+  const loader = document.getElementById("loading-screen");
+  const mainContent = document.getElementById("main-content");
+  if (loader) loader.style.display = "none";
+  if (mainContent) mainContent.style.display = "block";
 });
-const sections = document.querySelectorAll('.section');
 
-const observer = new IntersectionObserver(entries => {
+// Intersection Observer for revealing sections
+const sections = document.querySelectorAll('.section');
+const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.classList.add('visible');
@@ -15,49 +17,48 @@ const observer = new IntersectionObserver(entries => {
 }, {
   threshold: 0.2
 });
-
 sections.forEach(section => {
   observer.observe(section);
 });
 
-
-var typed = new Typed('.text', {
-    strings: ['Oracle APEX Developer','Full Stack Developer', 'Web Designer','Ui/Ux Designer'],
+// Typed.js initialization
+if (typeof Typed !== "undefined") {
+  new Typed('.text', {
+    strings: ['Oracle APEX Developer', 'Full Stack Developer', 'Web Designer', 'Ui/Ux Designer'],
     typeSpeed: 100,
-    
-    loop:true
+    loop: true
   });
+}
 
-  document.querySelectorAll(".read-more").forEach((btn) => {
-    btn.addEventListener("click", function () {
-      const desc = this.previousElementSibling;
-      if (this.textContent === "Read more") {
-        desc.textContent = desc.dataset.full;
-        this.textContent = "Show less";
-      } else {
-        desc.textContent = desc.dataset.short;
-        this.textContent = "Read more";
-      }
-    });
+// Toggle “Read more” / “Show less” on project descriptions
+document.querySelectorAll(".toggle-desc").forEach(btn => {
+  btn.addEventListener("click", () => {
+    const descriptionContainer = btn.closest('.description');
+    if (!descriptionContainer) return;
+
+    const shortText = descriptionContainer.querySelector('.short-text');
+    const fullText = descriptionContainer.querySelector('.full-text');
+
+    if (!shortText || !fullText) return;
+
+    if (fullText.classList.contains('hidden')) {
+      fullText.classList.remove('hidden');
+      shortText.style.display = 'none';
+      btn.textContent = 'Show less';
+    } else {
+      fullText.classList.add('hidden');
+      shortText.style.display = 'block';
+      btn.textContent = 'Read more';
+    }
   });
+});
 
-  // Store short and full descriptions
-  document.querySelectorAll(".project-description").forEach((desc) => {
-    const full = desc.textContent.trim();
-    const short = full.slice(0, 100) + "...";
-    desc.dataset.full = full;
-    desc.dataset.short = short;
-    desc.textContent = short;
+// Redirect when send-icon is clicked
+document.querySelectorAll(".send-icon").forEach(btn => {
+  btn.addEventListener("click", () => {
+    const link = btn.getAttribute("data-link");
+    if (link) {
+      window.open(link, "_blank");
+    }
   });
-
-  // Redirect on send icon click
-  document.querySelectorAll(".send-icon").forEach((btn) => {
-    btn.addEventListener("click", function () {
-      const link = this.getAttribute("data-link");
-      if (link) window.open(link, "_blank");
-    });
-  });
-
-
-  
-  
+});
