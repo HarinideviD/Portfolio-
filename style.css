@@ -1076,3 +1076,48 @@ body {
     text-align: center;
     margin-top: 10px;
   }
+
+
+.chat-toggle {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  font-size: 24px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.bot-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.suggested-questions {
+  padding: 10px;
+  background: #f1f1f1;
+  border-top: 1px solid #ccc;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.suggested-questions button {
+  background: #e0e0e0;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 15px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.suggested-questions button:hover {
+  background: #d0d0d0;
+}
+
