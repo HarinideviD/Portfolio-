@@ -90,3 +90,61 @@ document.querySelectorAll(".send-icon").forEach(btn => {
     }
   });
 });
+let responses = {};
+
+fetch('responses.json')
+  .then(res => res.json())
+  .then(data => responses = data);
+
+document.getElementById("chat-toggle").addEventListener("click", () => {
+  const chat = document.getElementById("chatbot");
+  if (chat.style.display === "block") {
+    gsap.to(chat, { y: 50, opacity: 0, duration: 0.4, onComplete: () => chat.style.display = "none" });
+  } else {
+    chat.style.display = "block";
+    gsap.fromTo(chat, { y: 50, opacity: 0 }, { y: 0, opacity: 1, duration: 0.4 });
+  }
+});
+
+function sendMessage() {
+  const input = document.getElementById('user-input');
+  const message = input.value.trim();
+  if (!message) return;
+
+  appendMessage("You", message);
+  input.value = "";
+
+  const reply = getReply(message.toLowerCase());
+  setTimeout(() => {
+    appendMessage("Bot", reply);
+    speak(reply);
+  }, 500);
+}
+
+function appendMessage(sender, message) {
+  const chatWindow = document.getElementById("chat-window");
+  const msg = document.createElement("div");
+  msg.innerHTML = `<strong>${sender}:</strong> ${message}`;
+  chatWindow.appendChild(msg);
+  chatWindow.scrollTop = chatWindow.scrollHeight;
+}
+
+function getReply(input) {
+  for (let key in responses) {
+    if (input.includes(key)) {
+      return responses[key];
+    }
+  }
+  return "I'm not sure how to answer that yet!";
+}
+
+function speak(text) {
+  const speech = new SpeechSynthesisUtterance(text);
+  speech.lang = "en-US";
+  speechSynthesis.speak(speech);
+}
+function suggest(text) {
+  document.getElementById('user-input').value = text;
+  sendMessage();
+}
+
