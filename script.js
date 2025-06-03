@@ -54,5 +54,34 @@ var typed = new Typed('.text', {
     const status = document.getElementById("form-status");
     status.textContent = "Sending...";
   });
+<script>
+  // Toggle "Read more / Show less"
+  document.querySelectorAll('.toggle-desc').forEach(button => {
+    button.addEventListener('click', () => {
+      const desc = button.closest('.description');
+      const shortText = desc.querySelector('.short-text');
+      const fullText = desc.querySelector('.full-text');
+
+      if (fullText.classList.contains('hidden')) {
+        fullText.classList.remove('hidden');
+        shortText.style.display = 'none';
+        button.textContent = 'Show less';
+      } else {
+        fullText.classList.add('hidden');
+        shortText.style.display = 'block';
+        button.textContent = 'Read more';
+      }
+    });
+  });
+
+  // Handle project link click
+  document.querySelectorAll('.send-icon').forEach(button => {
+    button.addEventListener('click', () => {
+      const url = button.getAttribute('data-link');
+      if (url) window.open(url, '_blank');
+    });
+  });
+
+
   
   
