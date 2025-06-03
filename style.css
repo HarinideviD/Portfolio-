@@ -839,7 +839,7 @@ body {
   
   .projects {
     display: grid;
-    grid-template-columns: repeat(1, 1fr); /* 1 column by default */
+    grid-template-columns: repeat(4, 1fr); /* 1 column by default */
     gap: 2rem;
     padding: 2rem;
     justify-items: center;
@@ -903,11 +903,8 @@ body {
   margin-bottom: 1rem;
 }
 
-/* Description Texts */
-
-
-.short-text,
-.full-text {
+.description .short-text,
+.description .full-text {
   font-size: 0.9rem;
   color: #333;
   margin-bottom: 0.5rem;
@@ -917,20 +914,30 @@ body {
   display: none;
 }
 
-/* Toggle Button */
 .toggle-desc {
-  background: transparent;
+  background-color: transparent;
   border: none;
   color: #70db30;
   cursor: pointer;
   font-weight: 600;
   font-size: 0.9rem;
-  text-decoration: underline;
   padding: 0;
+  margin: 0;
+  text-decoration: underline;
+  transition: color 0.3s ease;
 }
 
 .toggle-desc:hover {
   color: #4caf20;
+}
+
+/* Optional: spacing inside card-details */
+
+
+/* Smooth animation (optional enhancement) */
+.description .full-text,
+.description .short-text {
+  transition: all 0.3s ease-in-out;
 }
 
 /* Bottom Info Box (like and send icons) */
