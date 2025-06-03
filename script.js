@@ -148,3 +148,15 @@ function suggest(text) {
   sendMessage();
 }
 
+const toggleBtn = document.getElementById("chat-toggle");
+const chatbox = document.getElementById("chatbot");
+
+toggleBtn.addEventListener("click", () => {
+  if (chatbox.classList.contains("hidden")) {
+    chatbox.classList.remove("hidden");
+  } else {
+    chatbox.classList.add("hidden");
+  }
+});
+
+
