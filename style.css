@@ -878,7 +878,7 @@ body {
 /* Card Details Section */
 .card-details {
   padding: 1rem;
-  background-color: #d8d5d6;
+  background-color: pink;
   flex-grow: 1;
 }
 
