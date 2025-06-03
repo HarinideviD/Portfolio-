@@ -1,0 +1,13 @@
+{
+  "your name": "I'm PortBot, your personal portfolio assistant.",
+  "who are you": "I'm PortBot, a chatbot built to introduce my creator and their work.",
+  "skills": "I'm skilled in HTML, CSS, JavaScript, React, GSAP, and Java Swing.",
+  "experience": "I have experience in building full-stack web apps and Java desktop applications.",
+  "projects": "I've built a portfolio website, a chat client, and various creative mini-projects.",
+  "contact": "You can reach me at your.email@example.com or through the contact form.",
+  "education": "I studied Computer Science and specialize in front-end development.",
+  "location": "I'm currently based in [Your City or Country].",
+  "resume": "You can find my resume in the Resume section or download it [here](#).",
+  "hobbies": "I enjoy coding, design, open-source, and exploring new tech tools.",
+  "tech stack": "My tech stack includes HTML, CSS, JS, React, GSAP, Node.js, and Java."
+}
