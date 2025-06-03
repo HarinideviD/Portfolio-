@@ -733,253 +733,134 @@ body {
 }
 
   
-.portfolio {
-    position: relative;
-    padding: 4rem 1rem;
-    color: #fff;
-    overflow: hidden;
-    z-index: 1;
-    background: linear-gradient(135deg, #1a1a1a 0%, #000000 50%, #1a1a1a 100%);
-  }
-  
-  /* Animated glow gradient */
-  .portfolio::before {
-    content: "";
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle at center, #70db30 0%, transparent 40%);
-    animation: glowEffect 6s linear infinite;
-    opacity: 0.06;
-    z-index: 0;
-    pointer-events: none;
-  }
-  
-  /* Floating particle effect (video-like) */
-  .portfolio::after {
-    content: "";
-    position: absolute;
-    width: 200%;
-    height: 200%;
-    top: -50%;
-    left: -50%;
-    background: 
-      repeating-radial-gradient(circle at 10% 20%, rgba(112, 219, 48, 0.1) 1px, transparent 2px),
-      repeating-radial-gradient(circle at 70% 80%, rgba(112, 219, 48, 0.08) 1px, transparent 3px);
-    animation: moveParticles 20s linear infinite;
-    opacity: 0.05;
-    z-index: 0;
-    pointer-events: none;
-  }
-  
-  /* Keep actual content on top */
-  .portfolio * {
-    position: relative;
-    z-index: 2;
-  }
-  
-  @keyframes glowEffect {
-    0% {
-      transform: rotate(0deg) scale(1);
-    }
-    50% {
-      transform: rotate(180deg) scale(1.05);
-    }
-    100% {
-      transform: rotate(360deg) scale(1);
-    }
-  }
-  
-  @keyframes moveParticles {
-    0% {
-      background-position: 0 0, 0 0;
-    }
-    100% {
-      background-position: 1000px 1000px, -1000px -1000px;
-    }
-  }
-  
-  
-  .portfolio h2 {
-    font-size: 32px;
-    text-align: center;
-    margin-bottom: 10px;
-    
-    background: radial-gradient(circle, #70db30, #1e3c72, #ff00cc);
-    background-size: 200% 200%;
-    background-position: center;
-    animation: radialColorMove 6s infinite alternate;
-    
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+.projects {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr); /* 1 column default */
+  gap: 2rem;
+  padding: 2rem 0;
+  justify-items: center;
 }
 
-/* Animation for moving the background gradient */
-@keyframes radialColorMove {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-}
-
-  
-  
-  .description {
-    max-width: 600px;
-    margin: 0 auto 2rem;
-    color: #444;
-  }
-  
+@media (min-width: 768px) {
   .projects {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr); /* 1 column by default */
-    gap: 2rem;
-    padding: 2rem;
-    justify-items: center;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on tablet */
   }
-  
-  @media (min-width: 768px) {
-    .projects {
-      grid-template-columns: repeat(2, 1fr);
-    }
+}
+
+@media (min-width: 1024px) {
+  .projects {
+    grid-template-columns: repeat(3, 1fr); /* 3 columns on desktop */
   }
-  
-  @media (min-width: 1024px) {
-    .projects {
-      grid-template-columns: repeat(4, 1fr); /* 4 columns on desktop */
-    }
-  }
-  .project-card {
-    position: relative;
-    overflow: hidden;
-    border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-    background-color: #fff;
-    width: 100%;
-    max-width: 300px;  /* Controls the width */
-    margin: 0 auto;    /* Optional: centers the card */
-  }
-  
-  
-  .project-card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    display: block;
-  }
-  
-  .info-box {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: rgba(255, 255, 255, 0.95);
-    padding: 1rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    backdrop-filter: blur(5px);
-  }
-  
-  .text-content h3 {
-    font-size: 1rem;
-    font-weight: 600;
-    margin: 0;
-    color: #000;
-  }
-  
-  .text-content .category {
-    font-size: 0.85rem;
-    color: #666;
-    margin: 0.2rem 0 0;
-  }
-  
-  .send-icon {
-    background-color: #000;
-    color: #fff;
-    border: none;
-    border-radius: 50%;
-    width: 36px;
-    height: 36px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: background 0.3s ease;
-  }
-  
-  .send-icon:hover {
-    background-color: #70db30;
-    color: #000;
-  }
-  
-  
-  .like-btn {
-    background: none;
-    border: 1px solid #70db30;
-    color: #70db30;
-    padding: 6px 14px;
-    border-radius: 20px;
-    font-size: 0.9rem;
-    cursor: pointer;
-    transition: background 0.3s ease, color 0.3s ease;
-  }
-  
-  .like-btn:hover {
-    background: #70db30;
-    color: #000;
-  }
-  
-  
-  .like-btn {
-    background: none;
-    border: 1px solid #70db30;
-    color: #70db30;
-    padding: 6px 14px;
-    border-radius: 20px;
-    font-size: 0.9rem;
-    cursor: pointer;
-    transition: background 0.3s ease, color 0.3s ease;
-  }
-  
-  .like-btn:hover {
-    background: #70db30;
-    color: #000;
-  }
-  
-  .card-description {
-    padding: 1rem 1.2rem;
-    font-size: 0.95rem;
-    color: #333;
-    background: #fff;
-    border-top: 1px solid #eee;
-    border-radius: 0 0 16px 16px;
-  }
-  
-  .show-more {
-    background-color: #70db30;
-    border: none;
-    color: black;
-    padding: 0.8rem 1.5rem;
-    font-size: 1rem;
-    font-weight: bold;
-    border-radius: 2rem;
-    margin-top: 2rem;
-    cursor: pointer;
-    transition: background 0.3s ease;
-    left: 45%;
-  }
-  
-  .show-more:hover {
-    background-color: #70db30;
-  }
+}
+
+/* Project Card Structure */
+.project-card {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  max-width: 320px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Project Image */
+.project-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+/* Project Details */
+.card-details {
+  padding: 1rem;
+  background-color: #fff;
+}
+
+/.project-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #000;
+}
+
+.project-skills {
+  font-size: 0.85rem;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+/* Description Texts */
+.description .short-text,
+.description .full-text {
+  font-size: 0.9rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.full-text.hidden {
+  display: none;
+}
+
+.toggle-desc {
+  background-color: transparent;
+  border: none;
+  color: #70db30;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: underline;
+  padding: 0;
+}
+
+/* Bottom info box */
+.info-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  padding: 0.75rem 1rem;
+  border-top: 1px solid #eee;
+}
+
+/* Send Icon Button */
+.send-icon {
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.send-icon:hover {
+  background-color: #70db30;
+  color: #000;
+}
+
+/* Like Button */
+.like-btn {
+  background: none;
+  border: 1px solid #70db30;
+  color: #70db30;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.like-btn:hover {
+  background: #70db30;
+  color: #000;
+}
+
 
   .contact-section {
     display: flex;
