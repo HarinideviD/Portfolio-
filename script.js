@@ -29,6 +29,32 @@ if (typeof Typed !== "undefined") {
     loop: true
   });
 }
+var tablinks= document.getElementsByClassName("tab-links");
+  var tabcontents = document.getElementsByClassName("tab-contents");
+
+  function opentab(tabname){
+    for(tablink of tablinks){
+      tablink.classList.remove("active-link");
+    }
+    for(tabcontent of tabcontents){
+      tabcontent.classList.remove("active-tab");
+    }
+    event.currentTarget.classList.add("active-link");
+    document.getElementById(tabname).classList.add("active-tab");
+
+  }
+
+  document.querySelectorAll('.like-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      let count = parseInt(btn.textContent.replace(/\D/g, ''));
+      btn.textContent = `❤ ${count + 1}`;
+    });
+  });
+
+  document.getElementById("contact-form").addEventListener("submit", function () {
+    const status = document.getElementById("form-status");
+    status.textContent = "Sending...";
+  });
 
 document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll(".toggle-desc").forEach(btn => {
