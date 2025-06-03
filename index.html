@@ -286,25 +286,34 @@ transparency and reduced administrative overhead.
                   <p id="form-status"></p>
                 </div>
               </section>
-            <!-- Chatbot Window -->
-<div class="chatbot" id="chatbot">
+            <!-- Floating Chatbot Icon -->
+<button id="chat-toggle" class="chat-toggle">
+  <img src="robot-icon.png" alt="Chat Icon" />
+</button>
+
+<!-- Chatbot Container -->
+<div id="chatbot" class="chatbot hidden">
   <div class="chat-header">
-    <img src="avatar.png" class="bot-avatar" alt="Bot Avatar" />
+    <img src="robot-icon.png" class="bot-avatar" alt="Bot Avatar" />
     <span>Ask Me Anything!</span>
   </div>
+
   <div class="chat-window" id="chat-window"></div>
+
   <div class="chat-input">
     <input type="text" id="user-input" placeholder="Type your question..." />
     <button onclick="sendMessage()">Send</button>
   </div>
+
+  <div class="suggested-questions" id="suggestions">
+    <p>Try asking:</p>
+    <button onclick="suggest('What are your skills?')">What are your skills?</button>
+    <button onclick="suggest('Tell me about your projects')">Tell me about your projects</button>
+    <button onclick="suggest('How can I contact you?')">How can I contact you?</button>
+    <button onclick="suggest('Can I see your resume?')">Can I see your resume?</button>
+  </div>
 </div>
-<div class="suggested-questions" id="suggestions">
-  <p>Try asking:</p>
-  <button onclick="suggest('What are your skills?')">What are your skills?</button>
-  <button onclick="suggest('Tell me about your projects')">Tell me about your projects</button>
-  <button onclick="suggest('How can I contact you?')">How can I contact you?</button>
-  <button onclick="suggest('Can I see your resume?')">Can I see your resume?</button>
-</div>
+
             
             
               <footer> 
