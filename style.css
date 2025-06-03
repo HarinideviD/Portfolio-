@@ -1120,4 +1120,103 @@ body {
 .suggested-questions button:hover {
   background: #d0d0d0;
 }
+/* Hide chat by default */
+.chatbot.hidden {
+  display: none;
+}
+
+.chat-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  border: none;
+  border-radius: 50%;
+  background: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  z-index: 1001;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.chat-toggle img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.chatbot {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  width: 320px;
+  max-height: 500px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 1000;
+  font-family: sans-serif;
+}
+
+.chat-header {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background: #007bff;
+  color: white;
+}
+
+.bot-avatar {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  border-radius: 50%;
+}
+
+.chat-window {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+  background: #f8f9fa;
+}
+
+.chat-input {
+  display: flex;
+  border-top: 1px solid #ccc;
+}
+
+.chat-input input {
+  flex: 1;
+  border: none;
+  padding: 10px;
+}
+
+.chat-input button {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 0 15px;
+}
+
+.suggested-questions {
+  padding: 8px;
+  background: #f1f1f1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.suggested-questions button {
+  background: #e0e0e0;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
 
