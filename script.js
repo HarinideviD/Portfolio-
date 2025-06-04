@@ -177,12 +177,6 @@ function suggest(text) {
   sendMessage();
 }
 
-const chatClose = document.getElementById('chat-close');
-const chatbox = document.getElementById('chatbot');
-
-chatClose.addEventListener('click', () => {
-  chatbox.classList.add('hidden'); // hides the chat window
-});
 
 
 
