@@ -137,15 +137,7 @@ function getReply(input) {
   }
   return "I'm not sure how to answer that yet!";
 }
- function getBotResponse(input) {
-    if (input.toLowerCase().includes('resume')) {
-      return `You can view or download my resume below:<br/>
-      <a href="assets/resume.pdf" target="_blank" class="chat-link">📄 View Resume</a><br/>
-      <a href="assets/resume.pdf" download class="chat-link">⬇️ Download Resume</a>`;
-    }
-
-    return "I'm not sure how to answer that yet. Try asking about my projects or skills!";
-  }
+ 
 
 function speak(text) {
   const speech = new SpeechSynthesisUtterance(text);
