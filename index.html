@@ -288,13 +288,13 @@ transparency and reduced administrative overhead.
               </section>
 <!-- Floating Chatbot Icon -->
 <button id="chat-toggle" class="chat-toggle">
-  <img src="images/chatbot.png" alt="Chat Icon" />
+  <img src="images/chatbot" alt="Chat Icon" />
 </button>
 
 <!-- Chatbot Container -->
 <div id="chatbot" class="chatbot hidden">
   <div class="chat-header">
-    <img src="images/chatbot.png" class="bot-avatar" alt="Bot Avatar" />
+    <img src="images/chatbot" class="bot-avatar" alt="Bot Avatar" />
     <span>Ask Me Anything!</span>
     <button id="chat-close" class="chat-close" aria-label="Close Chat">×</button>
   </div>
@@ -305,6 +305,8 @@ transparency and reduced administrative overhead.
     <input type="text" id="user-input" placeholder="Type your question..." />
     <button onclick="sendMessage()">Send</button>
   </div>
+    chatWindow.innerHTML += `<div class="bot-message">${response}</div>`;
+
 
   <div class="suggested-questions" id="suggestions">
     <p>Try asking:</p>
