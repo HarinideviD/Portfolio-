@@ -173,21 +173,4 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-// Toggle chatbot with GSAP animation
-chatToggle.addEventListener('click', () => {
-  if (chatbot.classList.contains('hidden')) {
-    chatbot.classList.remove('hidden');
-    gsap.from("#chatbot", { y: 100, opacity: 0, duration: 0.4, ease: "power2.out" });
-  } else {
-    gsap.to("#chatbot", {
-      y: 100,
-      opacity: 0,
-      duration: 0.3,
-      ease: "power2.in",
-      onComplete: () => chatbot.classList.add('hidden')
-    });
-  }
-});
-
-
 
