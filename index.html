@@ -286,16 +286,12 @@ transparency and reduced administrative overhead.
                   <p id="form-status"></p>
                 </div>
               </section>
-            <!-- Floating Chatbot Icon -->
-<button id="chat-toggle" class="chat-toggle">
-  <img src="images/chatbot" alt="Chat Icon" />
-</button>
-
 <!-- Chatbot Container -->
 <div id="chatbot" class="chatbot hidden">
   <div class="chat-header">
     <img src="images/chatbot" class="bot-avatar" alt="Bot Avatar" />
     <span>Ask Me Anything!</span>
+    <button id="chat-close" class="chat-close" aria-label="Close Chat">×</button>
   </div>
 
   <div class="chat-window" id="chat-window"></div>
@@ -313,6 +309,7 @@ transparency and reduced administrative overhead.
     <button onclick="suggest('Can I see your resume?')">Can I see your resume?</button>
   </div>
 </div>
+
 
             
             
