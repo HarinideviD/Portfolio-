@@ -52,10 +52,41 @@ var tablinks= document.getElementsByClassName("tab-links");
     });
   });
 
-  document.getElementById("contact-form").addEventListener("submit", function () {
-    const status = document.getElementById("form-status");
-    status.textContent = "Sending...";
+  <script>
+document.getElementById("contact-form").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const status = document.getElementById("form-status");
+  status.textContent = "Sending...";
+
+  const formData = {
+    name: document.querySelector('input[name="name"]').value,
+    email: document.querySelector('input[name="email"]').value,
+    message: document.querySelector('textarea[name="message"]').value
+  };
+
+  fetch("https://your-workspace-url.oracle.com/ords/your_schema/api/contact/submit", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(formData)
+  })
+  .then(res => {
+    if (res.ok) {
+      status.textContent = "Message sent and stored!";
+      document.getElementById("contact-form").reset();
+    } else {
+      status.textContent = "Error storing message.";
+    }
+  })
+  .catch(err => {
+    console.error(err);
+    status.textContent = "Server error. Try again.";
   });
+});
+</script>
+
 
 document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll(".toggle-desc").forEach(btn => {
