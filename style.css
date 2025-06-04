@@ -1230,3 +1230,21 @@ body {
   text-decoration: underline;
 }
 
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.chat-toggle {
+  animation: bounce 1.2s infinite ease-in-out;
+  animation-delay: 2s;
+}
+.chat-toggle:hover {
+  animation: none;
+  transform: scale(1.1);
+}
+
