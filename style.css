@@ -1078,145 +1078,143 @@ body {
   }
 
 
-.chat-toggle {
-  position: fixed;
-  bottom: 25px;
-  right: 25px;
-  font-size: 24px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 50%;
-  width: 60px;
-  height: 60px;
-  cursor: pointer;
-  z-index: 1001;
-}
-
-.bot-avatar {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  margin-right: 10px;
-}
-.suggested-questions {
-  padding: 10px;
-  background: #f1f1f1;
-  border-top: 1px solid #ccc;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 5px;
-}
-
-.suggested-questions button {
-  background: #e0e0e0;
-  border: none;
-  padding: 6px 10px;
-  border-radius: 15px;
-  cursor: pointer;
-  font-size: 13px;
-}
-
-.suggested-questions button:hover {
-  background: #d0d0d0;
-}
-/* Hide chat by default */
-.chatbot.hidden {
-  display: none;
-}
-
+/* Floating Chat Button */
 .chat-toggle {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  width: 60px;
-  height: 60px;
+  width: 64px;
+  height: 64px;
   border: none;
   border-radius: 50%;
-  background: white;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  z-index: 1001;
+  background: linear-gradient(135deg, #007bff, #00c6ff);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
   cursor: pointer;
-  padding: 5px;
+  padding: 10px;
+  z-index: 1001;
+  transition: transform 0.2s ease;
 }
-
+.chat-toggle:hover {
+  transform: scale(1.05);
+}
 .chat-toggle img {
   width: 100%;
   height: 100%;
   object-fit: contain;
 }
 
+/* Chatbot Container */
 .chatbot {
   position: fixed;
   bottom: 90px;
   right: 20px;
-  width: 320px;
-  max-height: 500px;
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  width: 350px;
+  max-height: 600px;
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2);
   display: flex;
   flex-direction: column;
   overflow: hidden;
   z-index: 1000;
-  font-family: sans-serif;
+  font-family: 'Segoe UI', sans-serif;
+  border: 1px solid #ddd;
+}
+.chatbot.hidden {
+  display: none;
 }
 
+/* Chat Header */
 .chat-header {
   display: flex;
   align-items: center;
-  padding: 10px;
-  background: #007bff;
+  justify-content: space-between;
+  padding: 14px 16px;
+  background: linear-gradient(135deg, #007bff, #00c6ff);
   color: white;
+  font-weight: bold;
+  position: relative;
 }
-
 .bot-avatar {
-  width: 30px;
-  height: 30px;
-  margin-right: 10px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
+  margin-right: 10px;
 }
 
+/* Close Button */
+.chat-close {
+  background: none;
+  border: none;
+  font-size: 22px;
+  color: white;
+  cursor: pointer;
+  margin-left: auto;
+  transition: color 0.2s ease;
+}
+.chat-close:hover {
+  color: #ffdddd;
+}
+
+/* Chat Window */
 .chat-window {
   flex: 1;
-  padding: 10px;
+  padding: 16px;
   overflow-y: auto;
-  background: #f8f9fa;
+  background: #f7f9fc;
+  font-size: 14px;
 }
 
+/* Input Section */
 .chat-input {
   display: flex;
-  border-top: 1px solid #ccc;
+  border-top: 1px solid #eee;
+  background: #ffffff;
 }
-
 .chat-input input {
   flex: 1;
   border: none;
-  padding: 10px;
+  padding: 14px;
+  font-size: 14px;
+  outline: none;
+  border-radius: 0;
 }
-
 .chat-input button {
   background: #007bff;
   color: white;
   border: none;
-  padding: 0 15px;
+  padding: 0 18px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.2s ease;
+}
+.chat-input button:hover {
+  background: #005ecb;
 }
 
+/* Suggested Questions */
 .suggested-questions {
-  padding: 8px;
-  background: #f1f1f1;
+  padding: 12px;
+  background: #f0f2f5;
+  border-top: 1px solid #ddd;
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
+  gap: 8px;
 }
-
+.suggested-questions p {
+  width: 100%;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
 .suggested-questions button {
-  background: #e0e0e0;
+  background: #e3eaf1;
   border: none;
-  padding: 6px 10px;
-  border-radius: 12px;
+  padding: 8px 12px;
+  border-radius: 16px;
   cursor: pointer;
   font-size: 13px;
+  transition: background 0.2s ease;
 }
-
-
+.suggested-questions button:hover {
+  background: #cbd8e2;
+}
