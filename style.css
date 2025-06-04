@@ -1195,14 +1195,14 @@ body {
 }
 /* Bot messages */
 .bot-message {
-  color: black;
+  color: black !important;
   margin: 5px 0;
   text-align: left;
 }
 
 /* User messages */
 .user-message {
-  color: black;
+  color: black !important;
   margin: 5px 0;
   text-align: right;
 }
