@@ -949,7 +949,7 @@ body {
 /* Like Button */
 .like-btn {
   background: none;
-  border: 1px solid #70db30;
+  border: 1px solid black;
   color: red;
   padding: 6px 14px;
   border-radius: 20px;
