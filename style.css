@@ -1193,19 +1193,7 @@ body {
 .chat-input button:hover {
   background: #005ecb;
 }
-/* Bot messages */
-.bot-message {
-  color: black;
-  margin: 5px 0;
-  text-align: left;
-}
 
-/* User messages */
-.user-message {
-  color: black;
-  margin: 5px 0;
-  text-align: right;
-}
 
 /* Suggested Questions */
 .suggested-questions {
