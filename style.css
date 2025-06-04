@@ -1218,3 +1218,13 @@ body {
 .suggested-questions button:hover {
   background: #cbd8e2;
 }
+
+.chat-link {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 500;
+}
+.chat-link:hover {
+  text-decoration: underline;
+}
+
