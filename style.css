@@ -1207,6 +1207,13 @@ body {
   text-align: right;
 }
 
+
+.user-message strong,
+.bot-message strong {
+  color: black !important;
+}
+
+
 /* Suggested Questions */
 .suggested-questions {
   padding: 12px;
