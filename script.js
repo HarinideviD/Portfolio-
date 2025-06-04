@@ -168,27 +168,7 @@ toggleBtn.addEventListener("click", () => {
   }
 });
 
-document.addEventListener('DOMContentLoaded', function () {
-  const chatToggle = document.getElementById('chat-toggle');
-  const chatbot = document.getElementById('chatbot');
-  const chatClose = document.getElementById('chat-close');
 
-  console.log("Toggle Button:", chatToggle);
-  console.log("Chatbot:", chatbot);
-  console.log("Close Button:", chatClose);
-
-  if (chatToggle && chatbot && chatClose) {
-    chatToggle.addEventListener('click', () => {
-      chatbot.classList.toggle('hidden');
-    });
-
-    chatClose.addEventListener('click', () => {
-      chatbot.classList.add('hidden');
-    });
-  } else {
-    console.error("One or more elements are missing!");
-  }
-});
 
 
 
