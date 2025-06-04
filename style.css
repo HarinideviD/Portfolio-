@@ -1169,7 +1169,7 @@ body {
 .chat-input {
   display: flex;
   border-top: 1px solid #eee;
-  background: #ffffff;
+  background: gray;
 }
 .chat-input input {
   flex: 1;
