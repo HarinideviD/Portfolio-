@@ -110,7 +110,6 @@ function sendMessage() {
   const input = document.getElementById('user-input');
   const message = input.value.trim();
   if (!message) return;
-  chatWindow.innerHTML += `<div class="user-message">${message}</div>`;
 
   appendMessage("You", message);
   input.value = "";
