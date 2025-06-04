@@ -159,16 +159,18 @@ toggleBtn.addEventListener("click", () => {
   }
 });
 
-const chatToggle = document.getElementById('chat-toggle');
-  const chatbot = document.getElementById('chatbot');
-  const chatClose = document.getElementById('chat-close');
+document.addEventListener('DOMContentLoaded', function () {
+    const chatToggle = document.getElementById('chat-toggle');
+    const chatbot = document.getElementById('chatbot');
+    const chatClose = document.getElementById('chat-close');
 
-  chatToggle.addEventListener('click', () => {
-    chatbot.classList.toggle('hidden');
-  });
+    chatToggle.addEventListener('click', () => {
+      chatbot.classList.toggle('hidden');
+    });
 
-  chatClose.addEventListener('click', () => {
-    chatbot.classList.add('hidden');
+    chatClose.addEventListener('click', () => {
+      chatbot.classList.add('hidden');
+    });
   });
 
 // Toggle chatbot with GSAP animation
