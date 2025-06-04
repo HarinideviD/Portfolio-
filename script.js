@@ -92,20 +92,43 @@ document.querySelectorAll(".send-icon").forEach(btn => {
 });
 let responses = {};
 
+// Load responses from JSON
 fetch('responses.json')
   .then(res => res.json())
-  .then(data => responses = data);
+  .then(data => responses = data)
+  .catch(err => console.error("Failed to load chatbot responses:", err));
 
-document.getElementById("chat-toggle").addEventListener("click", () => {
-  const chat = document.getElementById("chatbot");
-  if (chat.style.display === "block") {
-    gsap.to(chat, { y: 50, opacity: 0, duration: 0.4, onComplete: () => chat.style.display = "none" });
+// Elements
+const chatToggle = document.getElementById("chat-toggle");
+const chatbox = document.getElementById("chatbot");
+const chatClose = document.getElementById("chat-close");
+
+// Toggle Chat (open/close with GSAP)
+chatToggle.addEventListener("click", () => {
+  if (chatbox.classList.contains("hidden")) {
+    chatbox.classList.remove("hidden");
+    gsap.fromTo(chatbox, { y: 50, opacity: 0 }, { y: 0, opacity: 1, duration: 0.4 });
   } else {
-    chat.style.display = "block";
-    gsap.fromTo(chat, { y: 50, opacity: 0 }, { y: 0, opacity: 1, duration: 0.4 });
+    gsap.to(chatbox, {
+      y: 50,
+      opacity: 0,
+      duration: 0.4,
+      onComplete: () => chatbox.classList.add("hidden")
+    });
   }
 });
 
+// Close button (inside header)
+chatClose?.addEventListener("click", () => {
+  gsap.to(chatbox, {
+    y: 50,
+    opacity: 0,
+    duration: 0.4,
+    onComplete: () => chatbox.classList.add("hidden")
+  });
+});
+
+// Send user message
 function sendMessage() {
   const input = document.getElementById('user-input');
   const message = input.value.trim();
@@ -121,44 +144,39 @@ function sendMessage() {
   }, 500);
 }
 
+// Display message in chat window
 function appendMessage(sender, message) {
   const chatWindow = document.getElementById("chat-window");
   const msg = document.createElement("div");
+  msg.className = sender === "You" ? "user-message" : "bot-message";
   msg.innerHTML = `<strong>${sender}:</strong> ${message}`;
   chatWindow.appendChild(msg);
   chatWindow.scrollTop = chatWindow.scrollHeight;
 }
 
+// Get reply from loaded JSON
 function getReply(input) {
   for (let key in responses) {
     if (input.includes(key)) {
       return responses[key];
     }
   }
-  return "I'm not sure how to answer that yet!";
+  return "I'm not sure how to answer that yet. Try asking about my skills, resume, or projects.";
 }
- 
 
+// Speak the bot's reply
 function speak(text) {
-  const speech = new SpeechSynthesisUtterance(text);
-  speech.lang = "en-US";
-  speechSynthesis.speak(speech);
+  const utterance = new SpeechSynthesisUtterance(text.replace(/<[^>]*>?/gm, '')); // Remove HTML
+  utterance.lang = "en-US";
+  speechSynthesis.speak(utterance);
 }
+
+// Suggested buttons (pre-fills input + sends message)
 function suggest(text) {
   document.getElementById('user-input').value = text;
   sendMessage();
 }
 
-const toggleBtn = document.getElementById("chat-toggle");
-const chatbox = document.getElementById("chatbot");
-
-toggleBtn.addEventListener("click", () => {
-  if (chatbox.classList.contains("hidden")) {
-    chatbox.classList.remove("hidden");
-  } else {
-    chatbox.classList.add("hidden");
-  }
-});
 
 
 
