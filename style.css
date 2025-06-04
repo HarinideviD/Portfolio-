@@ -950,7 +950,7 @@ body {
 .like-btn {
   background: none;
   border: 1px solid #70db30;
-  color: #70db30;
+  color: red;
   padding: 6px 14px;
   border-radius: 20px;
   font-size: 0.9rem;
