@@ -52,7 +52,7 @@ var tablinks= document.getElementsByClassName("tab-links");
     });
   });
 
-  <script>
+ 
 document.getElementById("contact-form").addEventListener("submit", function (e) {
   e.preventDefault();
 
@@ -65,7 +65,7 @@ document.getElementById("contact-form").addEventListener("submit", function (e) 
     message: document.querySelector('textarea[name="message"]').value
   };
 
-  fetch("https://your-workspace-url.oracle.com/ords/your_schema/api/contact/submit", {
+  fetch("https://apex.oracle.com/pls/apex/r/apex/workspace/home?session=101620788582426/api/contact/submit", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
@@ -85,7 +85,7 @@ document.getElementById("contact-form").addEventListener("submit", function (e) 
     status.textContent = "Server error. Try again.";
   });
 });
-</script>
+
 
 
 document.addEventListener("DOMContentLoaded", () => {
