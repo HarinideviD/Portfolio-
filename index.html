@@ -1,342 +1,298 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE-edge">
-        <meta name="viewport" content="width-device-width , initial-scale-1.0">
-        <title >Portfolio</title>
-        <link rel="stylesheet" href="style.css">
-        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-       <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+</head>
+<body>
+    <div id="loading-screen">
+        <div class="loader">
+            <div class="orbit"></div>
+        </div>
+    </div>
+    
+    <header class="header">
+        <a href="#" class="logo">Harini.</a>
+        <i class='bx bx-menu' id="menu-icon"></i>
+        <nav class="navbar">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#experience">Experience</a>
+            <a href="#skills-section">Skills</a>
+            <a href="#portfolio">Project</a>
+            <a href="#contact-section">Contact</a>
+        </nav>
+    </header>
+    
+    <section class="home" id="home">
+        <img src="images/photo1.jpg" alt="Harini Devi">
+        <div class="home-con">
+            <h3>Hello, It's Me</h3>
+            <h1>Harini Devi</h1>
+            <h3>And I'm a <span class="text"></span></h3>
+            <p>Versatile full stack and web developer with a passion for creating innovative and user-centric digital experiences.<br> With a solid foundation in both front-end and back-end technologies.<br></p>
+            <div class="home-sci">
+                <a href="https://www.linkedin.com/in/harini-devi-d/" target="_blank" aria-label="LinkedIn"><i class='bx bxl-linkedin'></i></a>
+                <a href="https://www.instagram.com/harini.1312" target="_blank" aria-label="Instagram"><i class='bx bxl-instagram'></i></a>
+                <a href="mailto:hariniduraipandi003@gmail.com" aria-label="Email"><i class='bx bxl-gmail'></i></a>
+                <a href="https://github.com/HarinideviD" target="_blank" aria-label="GitHub"><i class='bx bxl-github'></i></a>
+            </div>
+            <a href="images/HARINI DEVI D.pdf" class="boxicon" target="_blank">Check Resume</a>
+        </div>
+    </section>
 
-        <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-        </head>
-        <body>
-            <div id="loading-screen">
-                <div class="loader">
-                    <div class="orbit"></div>
+    <section class="about" id="about">
+        <div class="row">
+            <div class="abo-con">
+                <h1>About<span class="me">Me</span></h1>
+                <p>Hi there, I'm a passionate full-stack developer with a keen interest in creating dynamic and user-friendly websites. I thrive on the challenge of bringing ideas to life through coding and design. I'm constantly exploring new technologies and methodologies to stay ahead of the curve in this ever-evolving field.<br> When initiating a new project, I conduct a thorough analysis of the project requirements and identify the most suitable technologies based on current trends.</p>
+            </div>
+            <div class="abo-con1">
+                <img src="images/photo1.jpg" alt="About Harini"> 
+            </div>
+            <div class="tab-title">
+                <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                <p class="tab-links" onclick="opentab('education')">Education</p>
+            </div>
+            <div class="tab-contents active-tab" id="skills">
+                <ul>
+                    <li><span>Full Stack Developer</span><br>Expertise in building end-to-end web applications using modern technologies.</li>
+                    <li><span>Web Development</span><br>Designing web application interfaces</li>
+                    <li><span>Oracle APEX Development</span><br>Low Code application development</li>
+                    <li><span>UI/UX</span><br>Designing Web/App interfaces</li>
+                </ul>
+            </div>
+            <div class="tab-contents" id="education">
+                <ul>
+                    <li><span>2025</span><br>B.Tech-IT from Jeppiaar Engineering College Chennai, Secured 8.21 CGPA.</li>
+                    <li><span>2021</span><br>HSC from Nadar Saraswathi Girl's Hr Sec School Theni, Secured 91.6%.</li>
+                    <li><span>2019</span><br>SSLC from Nadar Saraswathi Girl's Hr Sec School Theni, Secured 87.8%.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="experience" id="experience">
+        <h2>Experience</h2>
+        <div class="experience-card">
+            <h3>Oracle APEX Developer Intern</h3>
+            <p class="company">ProwessIQ Information Systems Private Limited</p>
+            <p class="duration">September 2024 – April 2025</p>
+            <ul>
+                <li>Refactored the Endless Aisle application using custom CSS and reusable templates.</li>
+                <li>Built a real-time Gold Coin Stock Check interface with dynamic visualizations.</li>
+                <li>Delivered POS 2425 enhancements: UI improvements, new scanner features, and performance boosts.</li>
+                <li>Developed an Order Management System in Oracle APEX with a responsive HTML/CSS/JS UI and optimized SQL/PLSQL queries.</li>
+                <li>Automated invoice generation and order tracking workflows to reduce manual effort and processing errors.</li>
+                <li>Used Node.js to convert PDFs into images as part of the invoice management process.</li>
+            </ul>
+            <button class="cert-btn" onclick="window.open('https://drive.google.com/file/d/1Lv_4G_c3AVsJHQkULnfoeD_171pPN4RJ/view?usp=drive_link')">
+                View Certificate
+            </button>
+        </div>
+        <div class="experience-card">
+            <h3>Senior Executive - COS</h3>
+            <p class="company">SRF Limited</p>
+            <p class="duration">August 2025 – Present</p> 
+            <p>Coming soon ---</p>
+        </div>
+    </section>
+      
+    <section class="skills-section" id="skills-section">
+        <div class="hazard-bg"></div>
+        <div class="skills-card">
+            <h2>What I do</h2>
+            <div class="skills-title">Skills</div>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" />
+                    <p>HTML</p>
+                </div>
+                <div class="skill-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" />
+                    <p>CSS</p>
+                </div>
+                <div class="skill-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" />
+                    <p>JavaScript</p>
+                </div>
+                <div class="skill-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" />
+                    <p>Java</p>
+                </div>
+                <div class="skill-item">
+                    <img src="https://img.icons8.com/ios-filled/50/sql.png" alt="SQL" />
+                    <p>SQL</p>
+                </div>
+                <div class="skill-item">
+                    <img src="https://img.icons8.com/color/96/source-code.png" alt="PL/SQL" />
+                    <p>PL/SQL</p>
+                </div>
+                <div class="skill-item">
+                    <img src="https://img.icons8.com/ios-filled/50/api.png" alt="RESTful APIs" />
+                    <p>RESTful APIs</p>
+                </div>
+                <div class="skill-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" />
+                    <p>Git</p>
+                </div>
+                <div class="skill-item">
+                    <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/aws-icon.svg" alt="AWS"/>
+                    <p>AWS</p>
                 </div>
             </div>
-            
-            <header class="header">
-                <a href="#" class="logo">Harini.</a>
+        </div>
+    </section>
 
-                <nav class="navbar">
-                    <a href="#home"">Home</a>
-                    <a href="#experience">Experience</a>
-                    <a href="#skills-section">Skills</a>
-                    <a href="#portfolio">Project</a>
-                    <a href="#contact-section">Contact</a>
-                </nav>
-            </header>
-            
-            <section  class="home" id="home" >
-               <img src="images/photo1.jpg">
-                <div class="home-con">
-                    <h3>Hello, It's Me</h3>
-                    <h1>Harini Devi</h1>
-                    <h3>And I'm a <span class="text"></span></h3>
-                    <p>Versatile full stack and web developer with a passion for creating innovative and user-centric digital experiences.</br> With a solid foundation in both front-end and back-end technologies.</br></p>
-                    <div class="home-sci">
-                        <a href="https://www.linkedin.com/in/harini-devi-d/" target="_blank"><i class='bx bxl-linkedin'></i></a>
-                        <a href="https://www.instagram.com/harini.1312" target="_blank"><i class='bx bxl-instagram'></i></a>
-                        <a href="mailto:hariniduraipandi003@gmail.com"><i class='bx bxl-gmail'></i></a>
-                        <a href="https://github.com/HarinideviD" target="_blank"><i class='bx bxl-github'></i></a>
-
+    <section class="portfolio" id="portfolio">
+        <h2>My Latest Work</h2>
+        <p class="description">
+            Welcome to my web development portfolio! Explore a collection of projects showcasing my expertise in Full stack and application development.
+        </p>
+        <div class="projects">
+            <div class="project-card">
+                <img src="images/chat_app_img.png" alt="PingIt Chat App">
+                <div class="card-details">
+                    <h3 class="project-title">PingIt: Ping. Chat. Repeat.</h3>
+                    <p class="project-skills">Java · Java Sockets · Multithreading · JavaFX · HTML CSS · JavaScript</p>
+                    <div class="description">
+                        <p class="short-text">Designed and developed a real-time chat application using Java Sockets...</p>
+                        <p class="full-text hidden">Designed and developed a real-time chat application using Java Sockets and OOPs concepts, supporting both private and group messaging, secure user registration, and file sharing capabilities. The application features a responsive and intuitive JavaFX-based UI. Multithreading enables simultaneous client interactions and efficient message handling.</p>
+                        <button class="toggle-desc">Read more</button>
                     </div>
-                    <a href="images/HARINI DEVI D.pdf" class="boxicon">Check Resume</a>
                 </div>
-            </section>
-            <section  class="about" id="about">
-                <div class="row">
-                <div class="abo-con">
-                    <h1>About<span class="me">Me</span> </h1>
-                    <p>Hi there, I'm a passionate full-stack developer with a keen interest in creating dynamic and user-friendly websites.
-                        I thrive on the challenge of bringing ideas to life through coding and design. 
-                        I'm constantly exploring new technologies and methodologies to stay ahead of the curve in this ever-evolving field.<br>
-                        When initiating a new project, I conduct a thorough analysis of the project requirements and identify the most suitable technologies based on current trends. 
-                        This ensures that our solutions are both tailored to the project's needs and leverage the latest advancements in technology. </p>
-                    
-                       </div>
-                       <div class="abo-con1">
-                        <img src="images/photo1.jpg"> 
-                       </div>
-                       <div class="tab-title">
-                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
-                        <p class="tab-links "onclick="opentab('education')">Education</p>
-                       </div>
-                       <div class="tab-contents active-tab" id="skills">
-                        <ul>
-                            <li><span>Full Stack Developer </span><br>Expertise in building end-to-end web applications using modern technologies.</li>
-                            <li><span>Web Development</span><br>Designing wed application interfaces</li>
-                            <li><span>Oracle APEX Development</span><br>Low Code application development</li>
-                            <li><span>UI/UX </span><br>Designing Wed/App interfaces</li>
-                        </ul>
-                       </div>
-                       <div class="tab-contents" id="education">
-                        <ul>
-                            <li><span>2025</span><br>B.Tech-IT from Jeppiaar Engineering college Chennai,Secured 8.21 CGPA.</li>
-                            <li><span>2021</span><br>HSC from Nadar Saraswathi Girl's Hr Sec School Theni,Secured 91.6%.</li>
-                            <li><span>2019</span><br>SSLC from Nadar Saraswathi Girl's Hr Sec School Theni,Secured 87.8%.</li>
-                        </ul>
-                       </div>
-                      
+                <div class="info-box">
+                    <button class="like-btn">❤ 0</button>
+                    <button class="send-icon" data-link="https://github.com/HarinideviD/Chat_App_Java" aria-label="Project Link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M2 21l21-9L2 3v7l15 2-15 2v7z"/>
+                        </svg>
+                    </button>
+                </div>
             </div>
-            </section>
-            <section  class="experience" id="experience">
-                <h2>Experience</h2>
-                <div class="experience-card">
-                  <h3>Oracle APEX Developer Intern</h3>
-                  <p class="company">ProwessIQ Information Systems Private Limited</p>
-                  <p class="duration">September 2024 – April 2025</p>
-                  <ul>
-                    <li>Refactored the Endless Aisle application using custom CSS and reusable templates.</li>
-                    <li>Built a real-time Gold Coin Stock Check interface with dynamic visualizations.</li>
-                    <li>Delivered POS 2425 enhancements: UI improvements, new scanner features, and performance boosts.</li>
-                    <li>Developed an Order Management System in Oracle APEX with a responsive HTML/CSS/JS UI and optimized SQL/PLSQL queries.</li>
-                    <li>Automated invoice generation and order tracking workflows to reduce manual effort and processing errors.</li>
-                    <li>Used Node.js to convert PDFs into images as part of the invoice management process.</li>
-                  </ul>
-                  <button class="cert-btn" onclick="window.open('https://drive.google.com/file/d/1Lv_4G_c3AVsJHQkULnfoeD_171pPN4RJ/view?usp=drive_link')">
-                    View Certificate
-                  </button>
+
+            <div class="project-card">
+                <img src="images/heart_img.png" alt="CVD Risk Prediction">
+                <div class="card-details">
+                    <h3 class="project-title">Predicting Accurate Cardiovascular Disease Risk and Patient Alert System</h3>
+                    <p class="project-skills">Python · Machine Learning · Random Forest · NumPy · Pandas · HTML CSS · JavaScript · Scikit-Learn</p>
+                    <div class="description">
+                        <p class="short-text">This project focuses on the early detection of heart disease using ML...</p>
+                        <p class="full-text hidden">This project focuses on the early detection of heart disease using machine learning techniques, specifically the Random Forest algorithm, to analyze vital health parameters such as heart rate, blood pressure, and body temperature. The system leverages the Cleveland heart disease dataset and uses a chi-square statistical test to select the 13 most significant features, thereby improving model performance.</p>
+                        <button class="toggle-desc">Read more</button>
+                    </div>
                 </div>
-                <div class="experience-card">
-                  <h3>Senior Executive - COS</h3>
-                  <p class="company">SRF Limited</p>
-                  <p class="duration">August 2025 – Present</p> 
-                    Coming soon ---
+                <div class="info-box">
+                    <button class="like-btn">❤ 0</button>
+                    <button class="send-icon" data-link="https://github.com/HarinideviD/CVD_Prediction" aria-label="Project Link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M2 21l21-9L2 3v7l15 2-15 2v7z"/>
+                        </svg>
+                    </button>
                 </div>
-              </section>
-              
-            <section  class="skills-section" id="skills-section">
-                <div class="hazard-bg"></div>
-                <div class="skills-card">
-                  <h2>What I do</h2>
-                  <div class="skills-title">Skills</div>
-                  <div class="skills-grid">
-                    
-                    <div class="skill-item">
-                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" />
-                      <p>HTML</p>
+            </div>
+
+            <div class="project-card">
+                <img src="images/Screenshot 2025-06-03 122557.png" alt="Vortex Photography">
+                <div class="card-details">
+                    <h3 class="project-title">Vortex Photography: Capturing Moments in Motion</h3>
+                    <p class="project-skills">HTML CSS · JavaScript · SQL</p>
+                    <div class="description">
+                        <p class="short-text">Developed a user-friendly photography booking platform that enables customers to seamlessly...</p>
+                        <p class="full-text hidden">Developed a user-friendly photography booking platform that enables customers to seamlessly select service packages, view personalized previews, and schedule appointments through an automated booking system.</p>
+                        <button class="toggle-desc">Read more</button>
                     </div>
-                    <div class="skill-item">
-                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" />
-                      <p>CSS</p>
-                    </div>
-                    <div class="skill-item">
-                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" />
-                      <p>JavaScript</p>
-                    </div>
-                    <div class="skill-item">
-                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" />
-                      <p>Java</p>
-                    </div>
-                    <div class="skill-item">
-                      <img src="https://img.icons8.com/ios-filled/50/sql.png" alt="SQL" />
-                      <p>SQL</p>
-                    </div>
-                    
-                    <div class="skill-item">
-                        <img src="https://img.icons8.com/color/96/source-code.png" alt="PL/SQL" />
-                        <p>PL/SQL</p>
-                      </div>
-                      <div class="skill-item">
-                        <img src="https://img.icons8.com/ios-filled/50/api.png" alt="RESTful APIs" />
-                        <p>RESTful APIs</p>
-                      </div>
-                      <div class="skill-item">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" />
-                        <p>Git</p>
-                      </div>
-                      <div class="skill-item">
-                        <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/aws-icon.svg" alt="AWS"/>
-                        <p>AWS</p>
-                      </div>
-                      
-                    </div>
-                  </div>
                 </div>
-              </section>
-              <section class="portfolio" id="portfolio">
-  <h2>My Latest Work</h2>
-  <p class="description">
-    Welcome to my web development portfolio! Explore a collection of projects showcasing my expertise in Full stack and application development.
-  </p>
-  <div class="projects">
-
-    <div class="project-card">
-      <img src="images/chat_app_img.png" alt="PingIt Chat App">
-      <div class="card-details">
-        <h3 class="project-title">PingIt: Ping. Chat. Repeat.</h3>
-        <p class="project-skills">Java · Java Sockets · Multithreading · JavaFX · HTML CSS · JavaScript</p>
-        <div class="description">
-      <p class="short-text">
-        Designed and developed a real-time chat application using Java Sockets...
-      </p>
-      <p class="full-text hidden">
-        Designed and developed a real-time chat application using Java Sockets and OOPs concepts, supporting both private and group messaging, secure user registration, and file sharing capabilities. The application features a responsive and intuitive JavaFX-based UI. Multithreading enables simultaneous client interactions and efficient message handling.
-      </p>
-      <button class="toggle-desc">Read more</button>
-    </div>
-      </div>
-      <div class="info-box">
-        <button class="like-btn">❤ 0</button>
-        <button class="send-icon" data-link="https://github.com/HarinideviD/Chat_App_Java">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M2 21l21-9L2 3v7l15 2-15 2v7z"/>
-          </svg>
-        </button>
-      </div>
-    </div>
-      <div class="project-card">
-      <img src="images/heart_img.png" alt="PingIt Chat App">
-      <div class="card-details">
-        <h3 class="project-title">Predicting Accurate Cardiovascular Disease Risk and Patient Alert System</h3>
-        <p class="project-skills">Python · Machine Learning · Random Forest · NumPy · Pandas · HTML CSS · JavaScript · Scikit-Learn</p>
-        <div class="description">
-      <p class="short-text">
-        This project focuses on the early detection of heart disease using ML...
-      </p>
-      <p class="full-text hidden">
-       This project focuses on the early detection of heart disease using machine learning techniques, specifically the Random Forest algorithm, to analyze vital health parameters such as heart rate, blood pressure, and body temperature. The system leverages the Cleveland heart disease dataset and uses a chi-square statistical test to select the 13 most significant features, thereby improving model performance.
-
-The model achieved a validation accuracy of 88.5%, demonstrating high reliability in predicting the risk of cardiovascular disease (CVD). In addition to risk prediction, the system is equipped to send real-time alerts to healthcare providers and guardians, including the patient’s location details, enhancing response time and patient safety.
-
-This computer-aided diagnostic tool showcases the potential of machine learning in healthcare, particularly in medication adherence prediction and risk stratification of CVD patients, enabling more proactive and informed clinical decision-making.
-This project focuses on the early detection of heart disease using machine learning techniques, specifically the Random Forest algorithm, to analyze vital health parameters such as heart rate, blood pressure, and body temperature. The system leverages the Cleveland heart disease dataset and uses a chi-square statistical test to select the 13 most significant features, thereby improving model performance. The model achieved a validation accuracy of 88.5%, demonstrating high reliability in predicting the risk of cardiovascular disease (CVD). In addition to risk prediction, the system is equipped to send real-time alerts to healthcare providers and guardians, including the patient’s location details, enhancing response time and patient safety. This computer-aided diagnostic tool showcases the potential of machine learning in healthcare, particularly in medication adherence prediction and risk stratification of CVD patients, enabling more proactive and informed clinical decision-making.
-      </p>
-      <button class="toggle-desc">Read more</button>
-    </div>
-      </div>
-      <div class="info-box">
-        <button class="like-btn">❤ 0</button>
-        <button class="send-icon" data-link="https://github.com/HarinideviD/CVD_Prediction">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M2 21l21-9L2 3v7l15 2-15 2v7z"/>
-          </svg>
-        </button>
-      </div>
-    </div>
-      <div class="project-card">
-      <img src="images/Screenshot 2025-06-03 122557.png" alt="PingIt Chat App">
-      <div class="card-details">
-        <h3 class="project-title">Vortex Photography: Capturing Moments in Motion</h3>
-        <p class="project-skills">HTML CSS · JavaScript · SQL</p>
-        <div class="description">
-      <p class="short-text">
-        Developed a user-friendly photography booking platform that enables customers to seamlessly...
-      </p>
-      <p class="full-text hidden">
-       Developed a user-friendly photography booking platform that enables customers to seamlessly select service packages, view personalized previews, and schedule appointments through an automated booking system. The platform was optimized for cross-browser compatibility and responsive design, ensuring a smooth user experience across devices. As a result of these enhancements, the platform achieved a 25% increase in booking conversions, demonstrating improved customer engagement and streamlined operations for the business.
-      </p>
-      <button class="toggle-desc">Read more</button>
-    </div>
-      </div>
-      <div class="info-box">
-        <button class="like-btn">❤ 0</button>
-        <button class="send-icon" data-link="https://harinidevid.github.io/photography-/">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M2 21l21-9L2 3v7l15 2-15 2v7z"/>
-          </svg>
-        </button>
-      </div>
-    </div>
-      <div class="project-card">
-      <img src="images/reimbursements-main.webp" alt="PingIt Chat App">
-      <div class="card-details">
-        <h3 class="project-title">Expense Reimbursement System</h3>
-        <p class="project-skills">Oracle APEX . SQL . PL/SQL . HTML CSS · JavaScript</p>
-        <div class="description">
-      <p class="short-text">
-        Developed an automated multi-level approval system for expense submissions...
-      </p>
-      <p class="full-text hidden">
-        Developed an automated multi-level approval system for expense submissions, streamlining workflow, reducing
-manual processing, and ensuring timely reimbursements with real-time status updates for improved
-transparency and reduced administrative overhead.
-      </p>
-      <button class="toggle-desc">Read more</button>
-    </div>
-      </div>
-      <div class="info-box">
-        <button class="like-btn">❤ 0</button>
-        <button class="send-icon" data-link="https://apex.oracle.com/pls/apex/r/harinidevi/expense-reimbursement/home?session=103792793417803">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M2 21l21-9L2 3v7l15 2-15 2v7z"/>
-          </svg>
-        </button>
-      </div>
-    </div>
-
-    
-
-  </div>
-  
-</section>
-
-              <section class="contact-section" id="contact-section">
-                <div class="contact-left">
-                  <h1>Let's Work!</h1>
+                <div class="info-box">
+                    <button class="like-btn">❤ 0</button>
+                    <button class="send-icon" data-link="https://harinidevid.github.io/photography-/" aria-label="Project Link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M2 21l21-9L2 3v7l15 2-15 2v7z"/>
+                        </svg>
+                    </button>
                 </div>
-            
-                <div class="contact-right">
-                  <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
-                    <input type="hidden" name="access_key" value="51a1f86b-1d9f-4e95-82ff-130e794c2985">
-                    <input type="text" name="name" placeholder="Name" required />
-                    <input type="email" name="email" placeholder="Email address" required />
-                    <textarea name="message" placeholder="Your Message" required></textarea>
-                    <button type="submit">Click me</button>
-                  </form>
-                  <p id="form-status"></p>
+            </div>
+
+            <div class="project-card">
+                <img src="images/reimbursements-main.webp" alt="Expense Reimbursement System">
+                <div class="card-details">
+                    <h3 class="project-title">Expense Reimbursement System</h3>
+                    <p class="project-skills">Oracle APEX · SQL · PL/SQL · HTML CSS · JavaScript</p>
+                    <div class="description">
+                        <p class="short-text">Developed an automated multi-level approval system for expense submissions...</p>
+                        <p class="full-text hidden">Developed an automated multi-level approval system for expense submissions, streamlining workflow, reducing manual processing, and ensuring timely reimbursements with real-time status updates.</p>
+                        <button class="toggle-desc">Read more</button>
+                    </div>
                 </div>
-              </section>
-<!-- Floating Chatbot Icon -->
-<button id="chat-toggle" class="chat-toggle">
-  <img src="images/chatbot" alt="Chat Icon" />
-</button>
+                <div class="info-box">
+                    <button class="like-btn">❤ 0</button>
+                    <button class="send-icon" data-link="https://apex.oracle.com/pls/apex/r/harinidevi/expense-reimbursement/home?session=103792793417803" aria-label="Project Link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M2 21l21-9L2 3v7l15 2-15 2v7z"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- Chatbot Container -->
-<div id="chatbot" class="chatbot hidden">
-  <div class="chat-header">
-    <img src="images/chatbot" class="bot-avatar" alt="Bot Avatar" />
-    <span>Ask Me Anything!</span>
-    <button id="chat-close" class="chat-close" aria-label="Close Chat">×</button>
-  </div>
+    <section class="contact-section" id="contact-section">
+        <div class="contact-left">
+            <h1>Let's Work!</h1>
+        </div>
+        <div class="contact-right">
+            <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+                <input type="hidden" name="access_key" value="51a1f86b-1d9f-4e95-82ff-130e794c2985">
+                <input type="text" name="name" placeholder="Name" required />
+                <input type="email" name="email" placeholder="Email address" required />
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <button type="submit">Click me</button>
+            </form>
+            <p id="form-status"></p>
+        </div>
+    </section>
 
-  <div class="chat-window" id="chat-window"></div>
+    <button id="chat-toggle" class="chat-toggle" aria-label="Toggle Chatbot">
+        <img src="images/chatbot" alt="Chat Icon" />
+    </button>
 
-  <div class="chat-input">
-    <input type="text" id="user-input" placeholder="Type your question..." />
-    <button onclick="sendMessage()">Send</button>
-  </div>
-    
+    <div id="chatbot" class="chatbot hidden">
+        <div class="chat-header">
+            <img src="images/chatbot" class="bot-avatar" alt="Bot Avatar" />
+            <span>Ask Me Anything!</span>
+            <button id="chat-close" class="chat-close" aria-label="Close Chat">×</button>
+        </div>
 
+        <div class="chat-window" id="chat-window"></div>
 
-  <div class="suggested-questions" id="suggestions">
-    <p>Try asking:</p>
-    <button onclick="suggest('What are your skills?')">What are your skills?</button>
-    <button onclick="suggest('Tell me about your projects')">Tell me about your projects</button>
-    <button onclick="suggest('How can I contact you?')">How can I contact you?</button>
-    <button onclick="suggest('Can I see your resume?')">Can I see your resume?</button>
-  </div>
-</div>
+        <div class="chat-input">
+            <input type="text" id="user-input" placeholder="Type your question..." />
+            <button onclick="sendMessage()">Send</button>
+        </div>
 
+        <div class="suggested-questions" id="suggestions">
+            <p>Try asking:</p>
+            <button onclick="suggest('What are your skills?')">What are your skills?</button>
+            <button onclick="suggest('Tell me about your projects')">Tell me about your projects</button>
+            <button onclick="suggest('How can I contact you?')">How can I contact you?</button>
+            <button onclick="suggest('Can I see your resume?')">Can I see your resume?</button>
+        </div>
+    </div>
 
-
-            
-            
-              <footer> 
-                        <a href="mailto:hariniduraipandi003@gmail.com"><i class='bx bxl-gmail'></i></a>
-                        <a href="https://www.linkedin.com/in/harini-devi29a558229" target="_blank"><i class='bx bxl-linkedin'></i></a>
-                        <a href="https://github.com/HarinideviD" target="_blank"><i class='bx bxl-github'></i></a>
-              </footer>
-              
-              
-            
-            <script src="script.js"></script> 
-        </body>
+    <footer> 
+        <a href="mailto:hariniduraipandi003@gmail.com" aria-label="Email"><i class='bx bxl-gmail'></i></a>
+        <a href="https://www.linkedin.com/in/harini-devi29a558229" target="_blank" aria-label="LinkedIn"><i class='bx bxl-linkedin'></i></a>
+        <a href="https://github.com/HarinideviD" target="_blank" aria-label="GitHub"><i class='bx bxl-github'></i></a>
+    </footer>
+      
+    <script src="script.js"></script> 
+</body>
 </html>
-
